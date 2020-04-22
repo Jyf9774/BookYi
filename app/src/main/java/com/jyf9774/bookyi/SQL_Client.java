@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 public class SQL_Client {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static String DB_URL = "jdbc:mysql://cdb-lk2sqxra.cd.tencentcdb.com:10051/mybook?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8";
+    static String DB_URL = "jdbc:mysql:// ;
     // 数据库的用户名与密码，需要根据自己的设置
     static final String USER = "root";
-    static final String PASS = "czk6123nb3!!!";
+    static final String PASS = "";
 
     public String login(String Account, String passwd) {
         Connection conn = null;
