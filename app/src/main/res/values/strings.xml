@@ -6,7 +6,7 @@
     <string name="nav_header_subtitle">欢迎使用书易</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="aes_key">czk6123nb3!!!</string>
+    <string name="aes_key">使用自己的key替换</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
