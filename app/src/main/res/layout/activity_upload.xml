@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadActivity">
+
+    <ScrollView
+        android:id="@+id/upload_scoll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button_chooseImg"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:text="选择图片"
+                app:layout_constraintEnd_toEndOf="@+id/ed_bookstatement"
+                app:layout_constraintTop_toTopOf="@+id/upload_bookimg" />
+
+            <Button
+                android:id="@+id/button_upload"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:text="确认上传"
+                app:layout_constraintBottom_toBottomOf="@+id/upload_bookimg"
+                app:layout_constraintEnd_toEndOf="@+id/button_chooseImg"
+                app:layout_constraintTop_toBottomOf="@+id/button_chooseImg" />
+
+            <EditText
+                android:id="@+id/ed_bookname"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="请输入书名"
+                android:inputType="textPersonName"
+                android:maxLength="50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/upload_title" />
+
+            <EditText
+                android:id="@+id/ed_bookstatement"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="请输入书籍描述"
+                android:inputType="textLongMessage"
+                android:maxLength="500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/upload_radioGroup" />
+
+            <EditText
+                android:id="@+id/ed_bookpriceordate"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:hint="价格（元）"
+                android:inputType="numberDecimal"
+                app:layout_constraintBottom_toTopOf="@+id/ed_bookstatement"
+                app:layout_constraintEnd_toEndOf="@+id/ed_bookname"
+                app:layout_constraintTop_toBottomOf="@+id/ed_bookname" />
+
+            <ImageView
+                android:id="@+id/upload_bookimg"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ed_bookstatement"
+                app:layout_constraintTop_toBottomOf="@+id/ed_bookstatement"
+                app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+            <TextView
+                android:id="@+id/upload_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="上传图书"
+                android:textColor="#BF000000"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/ed_bookname"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/upload_radioGroup"
+                android:layout_width="140dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/ed_bookstatement"
+                app:layout_constraintTop_toBottomOf="@+id/ed_bookname">
+
+                <RadioButton
+                    android:id="@+id/rb_sale"
+                    style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="出售" />
+
+                <RadioButton
+                    android:id="@+id/rb_borrow"
+                    style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:checked="false"
+                    android:text="出借" />
+            </RadioGroup>
+
+            <ProgressBar
+                android:id="@+id/upload_progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/upload_bookimg"
+                app:layout_constraintEnd_toEndOf="@+id/upload_bookimg"
+                app:layout_constraintStart_toStartOf="@+id/upload_bookimg"
+                app:layout_constraintTop_toTopOf="@+id/upload_bookimg" />
+
+            <TextView
+                android:id="@+id/img_uploaded_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:text="图片已上传"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/upload_bookimg"
+                app:layout_constraintEnd_toEndOf="@+id/upload_bookimg"
+                app:layout_constraintStart_toStartOf="@+id/upload_bookimg"
+                tools:visibility="invisible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+    >
+
+</androidx.constraintlayout.widget.ConstraintLayout>
