@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class SQL_Client {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static String DB_URL = "jdbc:mysql:// ;
+    static String DB_URL = "jdbc:mysql:// ; //输入您的数据库地址
     // 数据库的用户名与密码，需要根据自己的设置
     static final String USER = "root";
     static final String PASS = "";
