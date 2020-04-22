@@ -27,14 +27,14 @@ import java.util.Set;
 
 public class TencentCloudCos {
 
-    String region = "ap-chengdu";
-    String secretId = "AKIDe0tZ6O1M1Q6B1ctfkEeLivupUEl9wAXf"; //永久密钥 secretId
-    String secretKey = "5uqg9UVK0RflbcPzZ1Vt4zTlurcdQ0KU"; //永久密钥 secretKey
+    String region = "";
+    String secretId = ""; //永久密钥 secretId
+    String secretKey = ""; //永久密钥 secretKey
     CosXmlService cosXmlService;
 
     TransferConfig transferConfig;
     TransferManager transferManager;
-    String bucket = "jyf-1256919232";
+    String bucket = ""; //存储桶名
     COSXMLUploadTask cosxmlUploadTask;
 
     public void init(Context context) {
